@@ -1,0 +1,39 @@
+
+{% extends "@LicEcommerce/layout.html.twig" %}
+
+{% block title %}{{ parent() }}Modifier Profil{% endblock %}
+{% block titre_principale %}Vous pouvez editez votre profil : {% endblock %}
+{% block vue %}
+    <body>
+    <form id="form2" method="post" action="{{ path('lic_ecommerce_user_getModifer_profil') }}">
+        <fieldset>
+            <p>
+                <label for="f_identifiant">Identifiant &nbsp:</label>
+                <input type="text" id="f_identifiant" name="identifiant" size="10" value="{{ identifiant }} "/>
+            </p>
+            <p>
+                <label for="f_passWord">Mot de passe &nbsp:</label>
+                <input type="password" id="f_passWord" name="motDePasse" size="20" value="{{ motDePasse }}" />
+            </p>
+            <p>
+                <label for="f_nom">Nom &nbsp:</label>
+                <input type="text" id="f_nom" name="nom" size="6" value="{{ nom }}"/>
+            </p>
+            <p>
+                <label for="f_prenom">Prenom &nbsp:</label>
+                <input type="text" id="f_prenom" name="prenom" size="6" value="{{ prenom }}"/>
+            </p>
+            <p>
+                <label for="f_anniversaire">Date de naissance &nbsp:</label>
+                <input type="text" id="f_anniversaire" name="anniversaire" value="{{ dateDeNaissance|date('Y-m-d')}}" size="6"/>
+            </p>
+
+            <p>
+                <input type="submit" value="Modifier"/>
+            </p>
+        </fieldset>
+    </form>
+
+    </body>
+{% endblock %}
+

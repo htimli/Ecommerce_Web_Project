@@ -1,0 +1,23 @@
+{% extends "@LicEcommerce/layout.html.twig" %}
+
+{% block title %}{{ parent() }}Formulaire{% endblock %}
+{% block titre_principale %}Connexion:{% endblock %}
+{% block vue %}
+    <body>
+        <form id="form1" method="post" action="{{ path('lic_ecommerce_user_getConnexion') }}">
+            <fieldset>
+            <p>
+                <label for="f_login">Login &nbsp:</label>
+                <input type="text" id="f1_nom" name="login"/>
+            </p>
+            <p>
+                <label for="f_pass">Password &nbsp:</label>
+                <input type="password" id="f_pass" name="password"/>
+            </p>
+            <p>
+               <input type="submit" value="sign in"/>
+            </p>
+            </fieldset>
+        </form>
+    </body>
+{% endblock %}

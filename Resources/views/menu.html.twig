@@ -1,0 +1,23 @@
+<body>
+    {% if user is null %}
+        hello visiteur !<br/>
+        <a href="{{ path('lic_ecommerce_user_connexion') }}"> connexion</a><br />
+        <a href="{{ path('lic_ecommerce_user_creerCompte') }}">créer un compte</a><br />
+    {% else %}
+        {% if user.isadmin %}
+            hello admin !<br/>
+            <a href="{{ path('lic_ecommerce_user_deconnexion') }}"> déconnexion</a><br />
+            <a href="{{ path('lic_ecommerce_user_modifer_profil') }}"> gérer le profil</a><br />
+            <a href="{{ path('lic_ecommerce_user_affiche') }}"> gérer les clients</a><br />
+            <a href="https://fr.wikipedia.org/wiki/Amour_et_Amn%C3%A9sie">Wikipedia : Amour et Amnésie</a>
+        {% else %}
+            hello client !<br/>
+            <a href="{{ path('lic_ecommerce_data_list') }}"> lister les produits</a><br />
+            <a href="{{ path('lic_ecommerce_user_modifer_profil') }}">gérer le profil </a><br />
+            <a href="">gérer le panier</a><br />
+            <a href="">revenir à la page d’accueil </a><br />
+            <a href="{{ path('lic_ecommerce_user_deconnexion') }}">déconnexion</a><br />
+        {% endif %}
+    {% endif %}
+{{dump(user)}}
+</body>

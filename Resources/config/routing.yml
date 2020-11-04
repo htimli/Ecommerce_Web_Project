@@ -1,0 +1,42 @@
+lic_ecommerce_homepage:
+    path:     /acceuil
+    defaults: { _controller: LicEcommerceBundle:Default:index }
+lic_ecommerce_data_load:
+    path:     /load
+    defaults: { _controller: LicEcommerceBundle:Data:load }
+lic_ecommerce_data_list:
+    path:     /list
+    defaults: { _controller: LicEcommerceBundle:Data:list }
+lic_ecommerce_data_getList:
+    path:     /getList
+    defaults: { _controller: LicEcommerceBundle:Data:getList }
+lic_ecommerce_user_connexion:
+    path:     /connexion
+    defaults: { _controller: LicEcommerceBundle:User:connexion}
+lic_ecommerce_user_getConnexion:
+    path:     /Connexion/reponse
+    defaults: { _controller: LicEcommerceBundle:User:getConnexion}
+lic_ecommerce_user_deconnexion:
+    path:     /deconnexion
+    defaults: { _controller: LicEcommerceBundle:User:deconnexion}
+lic_ecommerce_user_creerCompte:
+    path:     /creerCompte
+    defaults: { _controller: LicEcommerceBundle:User:creerCompte}
+lic_ecommerce_user_getCreerCompte:
+    path:     /creerCompte/reponse
+    defaults: { _controller: LicEcommerceBundle:User:getCreerCompte}
+lic_ecommerce_user_test:
+    path:     /test
+    defaults: { _controller: LicEcommerceBundle:User:test}
+lic_ecommerce_user_affiche:
+    path:     /users
+    defaults: { _controller: LicEcommerceBundle:User:affiche}
+lic_ecommerce_user_modifer_profil:
+    path:     /modifierProfil
+    defaults: { _controller: LicEcommerceBundle:User:modifierProfil}
+lic_ecommerce_user_getModifer_profil:
+    path:     /modifierProfil/reponse
+    defaults: { _controller: LicEcommerceBundle:User:getModifierProfil}
+lic_ecommerce_user_menu:
+    path:     /menu
+    defaults: { _controller: LicEcommerceBundle:User:afficheMenu}

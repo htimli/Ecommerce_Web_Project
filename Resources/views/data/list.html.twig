@@ -1,0 +1,44 @@
+{% extends "@LicEcommerce/layout.html.twig" %}
+
+{% block title %}{{ parent() }}list{% endblock %}
+{% block titre_principale %}Nos Produits : {% endblock %}
+{% block vue %}
+
+    <body>
+    <form id="form3" method="post" action="{{ path('lic_ecommerce_data_getList') }}">
+        <table>
+            <tr>
+                <th>Libellé</th>
+                <th>Prix</th>
+                <th>Stock</th>
+                <th>Choix</th>
+            </tr>
+            {% for produit in produits %}
+                {% if produit.quantite is not null %}
+                    <tr>
+                        <td>{{ produit.libelle }}</td>
+                        <td>{{ produit.prix }}</td>
+                        <td>{{ produit.quantite }}</td>
+                        <td>
+                            <select name="prod[{{ produit.id }}]">
+                                {% for i in 0..produit.quantite %}
+                                    <option>{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+
+            <tr><td colspan="4"><input type="submit" value="Commander" /></td></tr>
+        </table>
+
+        {{ dump(produits) }}
+
+    </body>
+
+
+
+
+{% endblock %}
+

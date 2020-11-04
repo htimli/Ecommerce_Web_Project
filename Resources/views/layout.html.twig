@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}PhoneStore:{% endblock title %}</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <div id="vue">
+            <h1>{% block titre_principale %}{% endblock titre_principale %}</h1>
+            {% block vue %}{% endblock vue %}
+        </div>
+        <div id="menu">
+            <h1>Menu</h1>
+            {{ render(controller('LicEcommerceBundle:User:afficheMenu')) }}
+        </div>
+
+
+    </body>
+</html>

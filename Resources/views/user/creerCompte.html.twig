@@ -1,0 +1,36 @@
+{% extends "@LicEcommerce/layout.html.twig" %}
+
+{% block title %}{{ parent() }}Creer compte{% endblock %}
+{% block titre_principale %}S'inscrire : {% endblock %}
+{% block vue %}
+    <body>
+    <form id="form2" method="post" action="{{ path('lic_ecommerce_user_getCreerCompte') }}">
+        <fieldset>
+            <p>
+                <label for="f_identifiant">Identifiant &nbsp:</label>
+                <input type="text" id="f_identifiant" name="identifiant" size="10"/>
+            </p>
+            <p>
+                <label for="f_passWord">Mot de passe &nbsp:</label>
+                <input type="password" id="f_passWord" name="motDePasse" size="20" minlength="8" required/>
+            </p>
+            <p>
+                <label for="f_nom">Nom &nbsp:</label>
+                <input type="text" id="f_nom" name="nom" size="6"/>
+            </p>
+            <p>
+                <label for="f_prenom">Prenom &nbsp:</label>
+                <input type="text" id="f_prenom" name="prenom" size="6"/>
+            </p>
+            <p>
+                <label for="f_anniversaire">Date de naissance &nbsp:</label>
+                <input type="text" id="f_anniversaire" name="anniversaire" value="2020-04-26" size="6"/>
+            </p>
+
+            <p>
+                <input type="submit" value="sign up"/>
+            </p>
+        </fieldset>
+    </form>
+    </body>
+{% endblock %}

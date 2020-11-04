@@ -1,0 +1,47 @@
+{% extends "@LicEcommerce/layout.html.twig" %}
+
+{% block title %}{{ parent() }}Users{% endblock %}
+{% block titre_principale %}les utilisateurs authentifiés : {% endblock %}
+{% block vue %}
+    <body>
+
+        <table>
+            <tr>
+                <th>Login</th>
+                <th>Mot de passe</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date de Naissance</th>
+                <th>Statut</th>
+            </tr>
+            {% for user in utilisateurs %}
+                    <tr>
+                        <td>{{ user.identifiant }}</td>
+                        <td>{{ user.motdepasse }} </td>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.prenom }}</td>
+                        {% if user.anniversaire is not null %}
+                            <td>{{ user.anniversaire|date('Y - m - d')}}</td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                        {% if user.isadmin == 1 %}
+                            <td>{{'*admin*'}}</td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                    </tr>
+            {% endfor %}
+
+        </table>
+
+
+    {{ dump(utilisateurs) }}
+
+    </body>
+
+
+
+
+{% endblock %}
+
